@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<head>
+    <title>个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+
+            list-style: none;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .topNavBar nav>ul>li {
+            float: left;
+            margin-left: 17px;
+            margin-right: 17px;
+            margin-top: 5px;
+        }
+
+        .topNavBar nav>ul>li>a {
+            font-size: 12px;
+            color: #b7b7b7;
+            text-decoration: none;
+            font-weight: bold;
+            border: 3px solid transparent;
+            /*透明*/
+            padding-bottom: 5px;
+            display: block;
+        }
+
+        .topNavBar .logo {
+            float: left;
+            margin: 15px 0 0 10px;
+        }
+
+        .topNavBar .logo>.rs,
+        .topNavBar .logo>.card {
+            float: left;
+        }
+
+        .topNavBar .logo>.rs {
+            color: darkred;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .topNavBar .logo>.card {
+            color: pink;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-top: 1px;
+        }
+
+        .topNavBar nav {
+            float: right;
+            margin-top: 15px
+        }
+
+        .topNavBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .topNavBar .topNavBarInner {
+            padding: 0 16px 0 16px;
+        }
+
+        .banner {
+            height: 515px;
+            border: 1px solid red;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .banner .mask {
+            height: 515px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .userCard {
+            border: 1px solid red;
+            max-width: 940px;
+            /*最大宽度940  自适应*/
+            margin-left: auto;
+            margin-right: auto;
+            /*设置宽度 + 左右自动 = 居中*/
+
+            background-color: #fff;
+            color: #000;
+        }
+
+        .userCard .welcome {
+            background: #e6686a;
+            color: white;
+
+            /* span默认不能设置宽高,可以改成inline-block元素 */
+            display: inline-block;
+
+            /*
+            新手的做法
+
+            width: 70px;
+            height: 29px;
+
+            line-height: 29px;    // line-height = height 就会自动居中(单行文本)
+            text-align: center;   // 文本水平居中
+
+
+            如果要加字的话 设置固定宽高时就会出问题  
+            所以尽量不要加宽高  加padding即可
+            */
+
+            padding: 4px 16px;
+            line-height: 29px;
+            font-weight: bold;
+
+            position: relative;
+
+            margin-bottom: 10px;
+
+        }
+
+        .userCard .welcome .triangle {
+            display: block;
+            border: 10px solid transparent;
+            width: 0px;
+            height: 0px;
+
+            border-left-color: #e6686a;
+            border-top-width: 0;
+
+            position: absolute;
+            left: 4px;
+            /*靠左*/
+            top: 100%;
+            /*左下角(外面)*/
+
+
+
+        }
+
+        .userCard .profile {
+            padding: 50px;
+        }
+
+        .userCard .picture,
+        .userCard .text {
+            float: left;
+        }
+
+        .userCard .text {
+            margin-left: 65px;
+            width: 470px;
+        }
+
+        .userCard .text h1 {
+            margin-top: 18px;
+        }
+
+        hr {
+            height: 0;
+            border: none;
+            border-top: 1px solid #dedede;
+        }
+
+        .userCard .text hr {
+            margin: 20px 0;
+
+        }
+
+        .userCard dl dt,
+        .userCard dl dd {
+            float: left;
+            padding: 5px 0;
+            /*上下间距*/
+
+        }
+
+        .userCard dl dt {
+            width: 40%;
+            font-weight: bold;
+        }
+
+        .userCard dl dd {
+            width: 60%;
+            color: #9da0a7;
+        }
+
+        .userCard>footer.media {
+            background-color: #e6686a;
+            text-align:center;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .userCard footer.media svg{
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+            vertical-align: top;    /*顶端对齐*/
+        }
+
+        .userCard footer.media > a{
+            display: inline-block;
+            width: 40px;
+            line-height: 30px;
+            padding: 5px 0;
+
+            border-radius: 50%;
+            margin: 16px;
+            
+        }
+        .userCard footer.media > a:hover{
+            background-color: #cf5d5f;
+        }
+    </style>
+
+    <script src="./iconfont.js"></script>
+</head>
+
+<body>
+    <div class="topNavBar ">
+        <div class="topNavBarInner clearfix">
+            <div class="logo clearfix">
+                <div class="rs">RS</div>
+                <div class="card">card</div>
+            </div>
+
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SKILLS</a></li>
+                    <li><a href="#">EXPERIENCE</a></li>
+                    <li><a href="#">PRICING</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CALENDAR</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">OTHER</a></li>
+                    <li><a href="#">ALL DEMOS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--这种背景为图片的banner一般直接设置背景图 不用img-->
+    <div class="banner" style="background-image:url(img/wallhaven-758147.jpg)">
+        <div class="mask"></div>
+    </div>
+
+    <!-- main标签表示主要内容 -->
+    <main>
+
+        <!-- 名片 -->
+        <div class="userCard">
+
+            <!-- 分成上下两部分 -->
+            <!-- 上半部分 个人介绍-->
+            <div class="profile clearfix">
+
+                <!-- 分为左边的头像 -->
+                <div class="picture">
+                    <img src="./img/avatar.jpeg" width="299" height="347" alt="头像">
+                </div>
+
+                <!-- 右边的文字描述   -->
+                <div class="text">
+                    <span class="welcome">Hello
+                        <span class="triangle"></span>
+                    </span>
+                    <!--问候语-->
+                    <h1>PuzzleX</h1>
+                    <!--姓名-->
+                    <p>全栈开发工程师</p>
+                    <!--职称-->
+                    <hr />
+                    <!--水平分割线-->
+                    <dl>
+                        <!-- 定义+描述 可以使用描述列表  description list  使用dl标签 -->
+                        <!-- dl里面有两种标签  dt(description term)和dd(description definition)  -->
+                        <dt>年龄</dt>
+                        <dd>18</dd>
+                        <dt>所在城市</dt>
+                        <dd>北京</dd>
+                        <dt>邮箱</dt>
+                        <dd>puzzlex@live.com</dd>
+                        <dt>手机</dt>
+                        <dd>1311111111</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- 下半部分 个人媒体账号  很像圆角 所以可以用footer -->
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-ttww"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+            </footer>
+
+        </div>
+
+        <!-- 点击按钮下载东西 实际上是一个跳转链接 -->
+        <a class="button" href="">下载PDF简历</a>
+
+        <p>
+            <!-- br会强制换行  hr是水平分割线 -->
+            aaaaaaaaaaaaaaaaaaaaaaaaaaa<br />aaaaaaaaaaaaaaaaaaaaa
+        </p>
+    </main>
+
+    <section>
+        <!-- section 表示章节 -->
+        <h2>技能</h2>
+        <ol>
+            <li>HTML 5 &amp; CSS 3</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>Vue</li>
+            <li>React</li>
+            <li>HTTP</li>
+        </ol>
+
+    </section>
+
+    <section>
+        <h2>作品集</h2>
+
+        <nav>
+            <ol>
+                <li>所有</li>
+                <li>框架</li>
+                <li>原生JavaScript</li>
+            </ol>
+        </nav>
+
+        <div class="jobs">
+            <div class="big"></div>
+            <div class="small"></div>
+            <div class="small"></div>
+        </div>
+    </section>
+</body>
+</head>
